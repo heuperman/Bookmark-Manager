@@ -7,8 +7,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/view' do
-    bookmark = Bookmark.new
-    @bookmarks = bookmark.all
+    @bookmarks = Bookmark.all
+    p Bookmark.all
     erb :view
   end
 
