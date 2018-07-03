@@ -1,15 +1,15 @@
 require 'sinatra'
 require './app/lib/bookmark'
 
+# Acts as the controller between user, views and method
 class BookmarkManager < Sinatra::Base
   get '/' do
     erb :index
   end
 
-  get '/view' do
+  get '/bookmarks' do
     @bookmarks = Bookmark.all
-    p Bookmark.all
-    erb :view
+    erb :bookmarks
   end
 
   run! if app_file == $PROGRAM_NAME
